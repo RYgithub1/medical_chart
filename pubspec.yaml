@@ -21,3 +21,4 @@ flutter:
   uses-material-design: true
   assets:
     - assets/images/sample_medical_doctors.jpg
+    - assets/images/medical_alert.png
