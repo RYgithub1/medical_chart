@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'medical_alert.dart';
-// import 'widget/setting_screen.dart'; // TODO:
+import 'medical_alert_home.dart';
+import 'widget/setting_screen.dart';
 
 
 void main() {runApp(MyApp());}
@@ -71,8 +72,9 @@ class _HomeScreenState extends State<HomeScreen> {
           Navigator.of(context).push(
             MaterialPageRoute(
               builder: (context) {
-                // return SettingScreen();
-                return MedicalAlert();
+                return SettingScreen();
+                // return MedicalAlert();
+                // return MedicalAlertHome();
               },
             ),
           );
