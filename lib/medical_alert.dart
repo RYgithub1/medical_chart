@@ -72,6 +72,151 @@ class _MedicalAlertState extends State<MedicalAlert> {
               onPressed: _showDialog,
               child: Text("Open Dialog"),
             ),
+
+            SizedBox(height:44),
+            Wrap(
+              alignment: WrapAlignment.end,
+              spacing: 12,
+              runSpacing: 20,
+              children: <Widget>[
+                Chip(
+                  label: Text("dog"),
+                  autofocus: true,
+                  elevation: 10,
+                  avatar: CircleAvatar(
+                    child: Icon(Icons.account_circle),
+                  ),
+                ),
+                Chip(
+                  label: Text("cat"),
+                  autofocus: true,
+                  elevation: 10,
+                  avatar: CircleAvatar(
+                    child: Icon(Icons.account_circle),
+                  ),
+                ),
+                Chip(
+                  label: Text("panda"),
+                  autofocus: true,
+                  elevation: 10,
+                  avatar: CircleAvatar(
+                    child: Icon(Icons.account_circle),
+                  ),
+                ),
+                Chip(
+                  label: Text("deer"),
+                  autofocus: true,
+                  elevation: 10,
+                  avatar: CircleAvatar(
+                    child: Icon(Icons.account_circle),
+                  ),
+                ),
+                Chip(
+                  label: Text("rat"),
+                  autofocus: true,
+                  elevation: 10,
+                  avatar: CircleAvatar(
+                    child: Icon(Icons.account_circle),
+                  ),
+                ),
+                Chip(
+                  label: Text("tiger"),
+                  autofocus: true,
+                  elevation: 10,
+                  avatar: CircleAvatar(
+                    child: Icon(Icons.account_circle),
+                  ),
+                ),
+                Chip(
+                  label: Text("mow"),
+                  autofocus: true,
+                  elevation: 10,
+                  avatar: CircleAvatar(
+                    child: Icon(Icons.account_circle),
+                  ),
+                ),
+                Chip(
+                  label: Text("chicken"),
+                  autofocus: true,
+                  elevation: 10,
+                  avatar: CircleAvatar(
+                    child: Icon(Icons.account_circle),
+                  ),
+                ),
+                Chip(
+                  label: Text("rabit"),
+                  autofocus: true,
+                  elevation: 10,
+                  avatar: CircleAvatar(
+                    child: Icon(Icons.account_circle),
+                  ),
+                ),
+                Chip(
+                  label: Text("dragon"),
+                  autofocus: true,
+                  elevation: 10,
+                  avatar: CircleAvatar(
+                    child: Icon(Icons.account_circle),
+                  ),
+                ),
+                Chip(
+                  label: Text("horse"),
+                  autofocus: true,
+                  elevation: 10,
+                  avatar: CircleAvatar(
+                    child: Icon(Icons.account_circle),
+                  ),
+                ),
+                Chip(
+                  label: Text("sheep"),
+                  autofocus: true,
+                  elevation: 10,
+                  avatar: CircleAvatar(
+                    child: Icon(Icons.account_circle),
+                  ),
+                ),
+                Chip(
+                  label: Text("monkey"),
+                  autofocus: true,
+                  elevation: 10,
+                  avatar: CircleAvatar(
+                    child: Icon(Icons.account_circle),
+                  ),
+                ),
+                Chip(
+                  label: Text("pig"),
+                  autofocus: true,
+                  elevation: 10,
+                  avatar: CircleAvatar(
+                    child: Icon(Icons.account_circle),
+                  ),
+                ),
+                Chip(
+                  label: Text("elephant"),
+                  autofocus: true,
+                  elevation: 10,
+                  avatar: CircleAvatar(
+                    child: Icon(Icons.account_circle),
+                  ),
+                ),
+                Chip(
+                  label: Text("zebra"),
+                  autofocus: true,
+                  elevation: 10,
+                  avatar: CircleAvatar(
+                    child: Icon(Icons.account_circle),
+                  ),
+                ),
+                Chip(
+                  label: Text("snake"),
+                  autofocus: true,
+                  elevation: 10,
+                  avatar: CircleAvatar(
+                    child: Icon(Icons.account_circle),
+                  ),
+                ),
+              ],
+            )
           ],
         ),
       ),

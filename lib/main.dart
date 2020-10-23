@@ -72,8 +72,8 @@ class _HomeScreenState extends State<HomeScreen> {
           Navigator.of(context).push(
             MaterialPageRoute(
               builder: (context) {
-                return SettingScreen();
-                // return MedicalAlert();
+                // return SettingScreen();
+                return MedicalAlert();
                 // return MedicalAlertHome();
               },
             ),
