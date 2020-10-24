@@ -12,6 +12,10 @@ class MedicalAlert extends StatefulWidget {
 
 
 class _MedicalAlertState extends State<MedicalAlert> {
+  List<String> animalName = [
+    "dog", "cat", "panda", "deer", "rat", "tiger", "mow", "chicken", "rabit",
+    "dragon", "horse", "sheep", "monkey", "pig", "elephant", "zebra", "snake",
+  ];
 
   String _value = '';
 
@@ -74,145 +78,193 @@ class _MedicalAlertState extends State<MedicalAlert> {
             ),
 
             SizedBox(height:44),
+            Divider(
+              height:4,
+              thickness:20,
+              color: Colors.grey[300],
+              indent: 100,
+            ),
+            Divider(
+              height:4,
+              thickness:20,
+              color: Colors.grey[300],
+              indent: 100,
+              endIndent: 100,
+            ),
+            Divider(
+              height:4,
+              thickness:20,
+              color: Colors.grey[300],
+              endIndent: 100,
+            ),
+            Center(
+              child: Text(
+                "Available Doctor",
+                style: TextStyle(
+                  fontSize:32,
+                  color: Colors.grey[800],
+                  fontWeight:FontWeight.bold,
+                  decoration: TextDecoration.underline,
+                  decorationStyle: TextDecorationStyle.dashed,
+                ),
+              ),
+            ),
             Wrap(
               alignment: WrapAlignment.end,
               spacing: 12,
               runSpacing: 20,
               children: <Widget>[
                 Chip(
-                  label: Text("dog"),
+                  label: Text(animalName[0]),
                   autofocus: true,
                   elevation: 10,
                   avatar: CircleAvatar(
                     child: Icon(Icons.account_circle),
+                    backgroundColor: Colors.green[100],
                   ),
                 ),
                 Chip(
-                  label: Text("cat"),
+                  label: Text(animalName[1]),
                   autofocus: true,
                   elevation: 10,
                   avatar: CircleAvatar(
                     child: Icon(Icons.account_circle),
+                    backgroundColor: Colors.green[200],
                   ),
                 ),
                 Chip(
-                  label: Text("panda"),
+                  label: Text(animalName[2]),
                   autofocus: true,
                   elevation: 10,
                   avatar: CircleAvatar(
                     child: Icon(Icons.account_circle),
+                    backgroundColor: Colors.green[300],
                   ),
                 ),
                 Chip(
-                  label: Text("deer"),
+                  label: Text(animalName[3]),
                   autofocus: true,
                   elevation: 10,
                   avatar: CircleAvatar(
                     child: Icon(Icons.account_circle),
+                    backgroundColor: Colors.green[400],
                   ),
                 ),
                 Chip(
-                  label: Text("rat"),
+                  label: Text(animalName[4]),
                   autofocus: true,
                   elevation: 10,
                   avatar: CircleAvatar(
                     child: Icon(Icons.account_circle),
+                    backgroundColor: Colors.green[500],
                   ),
                 ),
                 Chip(
-                  label: Text("tiger"),
+                  label: Text(animalName[5]),
                   autofocus: true,
                   elevation: 10,
                   avatar: CircleAvatar(
                     child: Icon(Icons.account_circle),
+                    backgroundColor: Colors.green[600],
                   ),
                 ),
                 Chip(
-                  label: Text("mow"),
+                  label: Text(animalName[6]),
                   autofocus: true,
                   elevation: 10,
                   avatar: CircleAvatar(
                     child: Icon(Icons.account_circle),
+                    backgroundColor: Colors.green[700],
                   ),
                 ),
                 Chip(
-                  label: Text("chicken"),
+                  label: Text(animalName[7]),
                   autofocus: true,
                   elevation: 10,
                   avatar: CircleAvatar(
                     child: Icon(Icons.account_circle),
+                    backgroundColor: Colors.green[800],
                   ),
                 ),
                 Chip(
-                  label: Text("rabit"),
+                  label: Text(animalName[8]),
                   autofocus: true,
                   elevation: 10,
                   avatar: CircleAvatar(
                     child: Icon(Icons.account_circle),
+                    backgroundColor: Colors.orange[100],
                   ),
                 ),
                 Chip(
-                  label: Text("dragon"),
+                  label: Text(animalName[9]),
                   autofocus: true,
                   elevation: 10,
                   avatar: CircleAvatar(
                     child: Icon(Icons.account_circle),
+                    backgroundColor: Colors.orange[200],
                   ),
                 ),
                 Chip(
-                  label: Text("horse"),
+                  label: Text(animalName[10]),
                   autofocus: true,
                   elevation: 10,
                   avatar: CircleAvatar(
                     child: Icon(Icons.account_circle),
+                    backgroundColor: Colors.orange[300],
                   ),
                 ),
                 Chip(
-                  label: Text("sheep"),
+                  label: Text(animalName[11]),
                   autofocus: true,
                   elevation: 10,
                   avatar: CircleAvatar(
                     child: Icon(Icons.account_circle),
+                    backgroundColor: Colors.orange[400],
                   ),
                 ),
                 Chip(
-                  label: Text("monkey"),
+                  label: Text(animalName[12]),
                   autofocus: true,
                   elevation: 10,
                   avatar: CircleAvatar(
                     child: Icon(Icons.account_circle),
+                    backgroundColor: Colors.orange[500],
                   ),
                 ),
                 Chip(
-                  label: Text("pig"),
+                  label: Text(animalName[13]),
                   autofocus: true,
                   elevation: 10,
                   avatar: CircleAvatar(
                     child: Icon(Icons.account_circle),
+                    backgroundColor: Colors.orange[600],
                   ),
                 ),
                 Chip(
-                  label: Text("elephant"),
+                  label: Text(animalName[14]),
                   autofocus: true,
                   elevation: 10,
                   avatar: CircleAvatar(
                     child: Icon(Icons.account_circle),
+                    backgroundColor: Colors.orange[700],
                   ),
                 ),
                 Chip(
-                  label: Text("zebra"),
+                  label: Text(animalName[15]),
                   autofocus: true,
                   elevation: 10,
                   avatar: CircleAvatar(
                     child: Icon(Icons.account_circle),
+                    backgroundColor: Colors.orange[800],
                   ),
                 ),
                 Chip(
-                  label: Text("snake"),
+                  label: Text(animalName[16]),
                   autofocus: true,
                   elevation: 10,
                   avatar: CircleAvatar(
                     child: Icon(Icons.account_circle),
+                    backgroundColor: Colors.orange[900],
                   ),
                 ),
               ],
