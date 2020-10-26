@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
+import 'fruits_page.dart';
 
 
 enum Answers{YES, NO}
@@ -62,41 +62,13 @@ class _MedicalAlertState extends State<MedicalAlert> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back),
+            onPressed: (){Navigator.of(context).pop();},
+          ),
           title: Text('Medical Alert'),
           centerTitle: true,
           backgroundColor: Colors.pink[200],
-        ),
-        drawer: Drawer(   /// [Drawer()]
-          child: ListView(
-            children: <Widget>[
-              DrawerHeader(
-                child: Center(
-                  child: Text(
-                    'お見舞いFruits',
-                    style: TextStyle(fontWeight:FontWeight.bold, fontSize:36),
-                  ),
-                ),
-                decoration: BoxDecoration(
-                  color: Colors.pink[400],
-                ),
-              ),
-              ListTile(
-                title: Text("GO BACK TO HOME"),
-                onTap: (){Navigator.of(context).pop();},
-                tileColor: Colors.pink[200],
-              ),
-              ListTile(title: Text("Apple")),
-              ListTile(title: Text("Banana")),
-              ListTile(title: Text("Grape")),
-              ListTile(title: Text("Peach")),
-              ListTile(title: Text("Pineapple")),
-              ListTile(title: Text("Orange")),
-              ListTile(title: Text("Mango")),
-              ListTile(title: Text("Cherry")),
-              ListTile(title: Text("Watermelon")),
-              ListTile(title: Text("Lemon")),
-            ],
-          ),
         ),
         endDrawer: Drawer(   /// [endDrawer()]
           child: Column(
@@ -153,8 +125,13 @@ class _MedicalAlertState extends State<MedicalAlert> {
               ),
               ListTile(
                 leading: Icon(Icons.favorite),
-                title: Text("Hobby"),
-                onTap: (){print("Hobby");},
+                title: Text("Hobby (Eating Fruits)"),
+                onTap: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => FruitsPage()),
+                  );
+                },
               ),
               ListTile(
                 leading: Icon(Icons.contact_mail),

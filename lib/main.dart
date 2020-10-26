@@ -33,6 +33,12 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         title: Center(child: Text("Medical Chart")),
         backgroundColor: Colors.pink[200],
+        actions: [
+          IconButton(
+            icon: Icon(Icons.add_alert),
+            onPressed: () => {MedicalAlert()},
+          ),
+        ],
       ),
       body: Stack(
         children: <Widget>[
@@ -66,21 +72,19 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ],
       ),
-
-      floatingActionButton: FloatingActionButton(  /// TODO:
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.pink,
         onPressed: () {
           Navigator.of(context).push(
             MaterialPageRoute(
               builder: (context) {
                 // return SettingScreen();
-                return MedicalAlert();
-                // return MedicalAlertHome();
+                return MedicalAlertHome();
               },
             ),
           );
         },
       ),
-
     );
   }
 }
