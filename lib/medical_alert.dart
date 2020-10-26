@@ -66,11 +66,16 @@ class _MedicalAlertState extends State<MedicalAlert> {
           centerTitle: true,
           backgroundColor: Colors.pink[200],
         ),
-        drawer: Drawer(
+        drawer: Drawer(   /// [Drawer()]
           child: ListView(
             children: <Widget>[
               DrawerHeader(
-                child: Text('お見舞いFruits'),
+                child: Center(
+                  child: Text(
+                    'お見舞いFruits',
+                    style: TextStyle(fontWeight:FontWeight.bold, fontSize:36),
+                  ),
+                ),
                 decoration: BoxDecoration(
                   color: Colors.pink[400],
                 ),
@@ -78,6 +83,7 @@ class _MedicalAlertState extends State<MedicalAlert> {
               ListTile(
                 title: Text("GO BACK TO HOME"),
                 onTap: (){Navigator.of(context).pop();},
+                tileColor: Colors.pink[200],
               ),
               ListTile(title: Text("Apple")),
               ListTile(title: Text("Banana")),
@@ -92,17 +98,88 @@ class _MedicalAlertState extends State<MedicalAlert> {
             ],
           ),
         ),
-        endDrawer: Drawer(
+        endDrawer: Drawer(   /// [endDrawer()]
           child: Column(
-            children: <Widget>[
+            children: [
               Container(
-                width: double.infinity,
-                padding: EdgeInsets.all(12),
-                color: Colors.pinkAccent[400],
+                child: Column(
+                  children: <Widget>[
+                    Container(
+                      width: double.infinity,
+                      height: 100,
+                      padding: EdgeInsets.all(16),
+                      margin: EdgeInsets.only(top:20, bottom:20),
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        image: DecorationImage(
+                          image: NetworkImage("https://thumbor.forbes.com/thumbor/fit-in/416x416/filters%3Aformat%28jpg%29/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F5ec595d45f39760007b05c07%2F0x0.jpg%3Fbackground%3D000000%26cropX1%3D989%26cropX2%3D2480%26cropY1%3D74%26cropY2%3D1564"),
+                          fit: BoxFit.contain,
+                        ),
+                      ),
+                    ),
+                    Text(
+                      "Enjoy Today!",
+                      style: TextStyle(fontSize:24, color:Colors.black),
+                    ),
+                  ],
+                ),
+              ),
+              Card(
+                child: InkWell(
+                  onTap: () {print("Emergency");},
+                  child: Center(
+                    child: Text(
+                      "> Emergency <",
+                      style: TextStyle(fontSize:18, color:Colors.red),
+                    ),
+                  ),
+                ),
+              ),
+              ListTile(
+                leading: Icon(Icons.person),
+                title: Tooltip(
+                  message:"onTap:chat , onLongPress:call",
+                  child: Text("Lionel Messi"),
+                ),
+                subtitle: Text("my contacts"),
+                trailing: Icon(Icons.info_outline),
+                onTap: (){print("startToChat");},
+                onLongPress: (){print("calling");},
+              ),
+              ListTile(
+                leading: Icon(Icons.schedule),
+                title: Text("Schedule"),
+                onTap: (){print("Schedule");},
+              ),
+              ListTile(
+                leading: Icon(Icons.favorite),
+                title: Text("Hobby"),
+                onTap: (){print("Hobby");},
+              ),
+              ListTile(
+                leading: Icon(Icons.contact_mail),
+                title: Text("Contacts"),
+                onTap: (){print("Contacts");},
+              ),
+              ListTile(
+                leading: Icon(Icons.monetization_on),
+                title: Text("Finance"),
+                onTap: (){print("Finance");},
+              ),
+              ListTile(
+                leading: Icon(Icons.settings),
+                title: Text("Settings"),
+                onTap: (){print("Settings");},
+              ),
+              ListTile(
+                leading: Icon(Icons.logout),
+                title: Text("Log Out"),
+                onTap: (){print("Log Out");},
               ),
             ],
           ),
         ),
+
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
