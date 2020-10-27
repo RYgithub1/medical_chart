@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'medical_alert.dart';
 import 'medical_alert_home.dart';
+import 'nested_tab_page.dart';
 import 'widget/setting_screen.dart';
+
 
 
 void main() {runApp(MyApp());}
@@ -31,12 +33,29 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(Icons.near_me),
+          onPressed: (){
+            Navigator.of(context).push(
+              MaterialPageRoute( builder: (context) {
+                return NestedTabPage();
+              }),
+            );
+          },
+        ),
         title: Center(child: Text("Medical Chart")),
+        centerTitle: true,
         backgroundColor: Colors.pink[200],
         actions: [
           IconButton(
             icon: Icon(Icons.add_alert),
-            onPressed: () => {MedicalAlert()},
+            onPressed: (){
+            Navigator.of(context).push(
+              MaterialPageRoute( builder: (context) {
+                return MedicalAlert();
+              }),
+            );
+          },
           ),
         ],
       ),
@@ -79,7 +98,7 @@ class _HomeScreenState extends State<HomeScreen> {
             MaterialPageRoute(
               builder: (context) {
                 // return SettingScreen();
-                return MedicalAlertHome();
+                // return MedicalAlertHome();
               },
             ),
           );
