@@ -13,6 +13,30 @@ class NestedTabPage extends StatefulWidget {
 class _NestedTabPageState extends State<NestedTabPage> {
   int _selectedIndex = 0;
 
+  String _alphaText = '';
+  void _handleAlphaText(String str) {
+    setState(() {
+      _alphaText = str;
+    });
+  }
+
+  final TextEditingController _textEditingController = new TextEditingController();
+  @override
+  void initState() {
+    super.initState();
+    _textEditingController.addListener(_printLatestValue);
+  }
+  @override
+  void dispose() {
+    _textEditingController.dispose();
+    super.dispose();
+  }
+  void _printLatestValue() {
+    print("input_content: ${_textEditingController.text}");
+  }
+
+
+  /// [========== build() ==========]
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -65,17 +89,86 @@ class _NestedTabPageState extends State<NestedTabPage> {
                   unselectedLabelColor: Colors.pink[900],
                   indicatorColor: Colors.transparent,
                   tabs: [
-                    Tab(text:"ob1:THX", icon:Icon(Icons.person)),
-                    Tab(text:"ob2:LIFE", icon:Icon(Icons.house)),
-                    Tab(text:"ob3:FOOD", icon:Icon(Icons.emoji_food_beverage)),
-                    Tab(text:"ob4:SLEEP", icon:Icon(Icons.timelapse)),
+                    Tab(text:"EXERCISE", icon:Icon(Icons.person)),
+                    Tab(text:"LIFE", icon:Icon(Icons.house)),
+                    Tab(text:"FOOD", icon:Icon(Icons.emoji_food_beverage)),
+                    Tab(text:"SLEEP", icon:Icon(Icons.timelapse)),
                   ],
                 ),
                 Container(
                   height: 350,
                   child: TabBarView(  /// [Expanded]
                     children: [
-                      Center(child: Text("ALPHA")),
+                      Column(
+                        children: <Widget>[
+                          Text("ALPHA"),
+                          SizedBox(height:20),
+                          Column(
+                            children: <Widget>[
+                              Padding(
+                                padding: EdgeInsets.only(left:60),
+                                child: Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Text(
+                                    "What kind of exercise do you do lately?",
+                                    style: TextStyle(fontSize:20, color:Colors.pink),
+                                  ),
+                                ),
+                              ),
+                              Text(
+                                "$_alphaText",
+                                style: TextStyle(
+                                  fontSize:16,
+                                  color: Colors.blue,
+                                  fontStyle: FontStyle.italic,
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.symmetric(horizontal:8),
+                                child: Expanded(
+                                  child: Container(
+                                    height: 80,
+                                    padding: EdgeInsets.symmetric(horizontal:12),
+                                    child: TextField(
+                                      enabled: true,   // active or noAactive
+                                      /// [Constraint]
+                                      maxLines:1 ,
+                                      maxLength: 77,
+                                      maxLengthEnforced: false,
+                                      obscureText: false,  // notPassword
+                                      style: TextStyle(color: Colors.pink[900]),
+                                      ///  [onChanged]
+                                      onChanged: _handleAlphaText,
+                                      controller: _textEditingController,
+                                      /// [Decoration]
+                                      decoration: InputDecoration(
+                                        border: OutlineInputBorder(
+                                          borderRadius: BorderRadius.all(Radius.circular(4)),
+                                        ),
+                                        filled: true,
+                                        fillColor: Colors.white,
+                                        hintStyle: TextStyle(
+                                          color: Colors.grey[400],
+                                        ),
+                                        hintText: "Exercise",
+                                        contentPadding: EdgeInsets.all(10),
+                                        icon: Icon(
+                                          Icons.check_circle,
+                                          color: Colors.pink[400],
+                                        ),
+                                        suffixIcon: Icon(
+                                          Icons.keyboard_arrow_right,
+                                          color: Colors.pink[400],
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
                       Center(child: Text("BETA")),
                       Center(child: Text("GAMMA")),
                       Center(child: Text("DELTA")),
@@ -148,10 +241,12 @@ class _NestedTabPageState extends State<NestedTabPage> {
     );
   }
 
-  /// [when user tap]
+
+  /// [sup: when user tap]
   void _onItemTapped(int indexValue) {
     setState(() {
-    _selectedIndex = indexValue;   /// [初期化せな]
-  });
+      _selectedIndex = indexValue;   /// [初期化せな]
+    });
   }
+
 }
