@@ -19,20 +19,33 @@ class _NestedTabPageState extends State<NestedTabPage> {
       _alphaText = str;
     });
   }
+  String _betaText = '';
+  void _handleBetaText(String str) {
+    setState(() {
+      _betaText = str;
+    });
+  }
+
 
   final TextEditingController _textEditingController = new TextEditingController();
+  final TextEditingController _textEditingControllerBeta = new TextEditingController();
   @override
   void initState() {
     super.initState();
     _textEditingController.addListener(_printLatestValue);
+    _textEditingControllerBeta.addListener(_printLatestValueBeta);
   }
   @override
   void dispose() {
     _textEditingController.dispose();
+    _textEditingControllerBeta.dispose();
     super.dispose();
   }
   void _printLatestValue() {
     print("input_content: ${_textEditingController.text}");
+  }
+  void _printLatestValueBeta() {
+    print("input_content_beta: ${_textEditingControllerBeta.text}");
   }
 
 
@@ -110,7 +123,7 @@ class _NestedTabPageState extends State<NestedTabPage> {
                                 child: Align(
                                   alignment: Alignment.centerLeft,
                                   child: Text(
-                                    "What kind of exercise do you do lately?",
+                                    "What kind of exercise do you do?",
                                     style: TextStyle(fontSize:20, color:Colors.pink),
                                   ),
                                 ),
@@ -153,7 +166,67 @@ class _NestedTabPageState extends State<NestedTabPage> {
                                         hintText: "Exercise",
                                         contentPadding: EdgeInsets.all(10),
                                         icon: Icon(
-                                          Icons.check_circle,
+                                          Icons.check,
+                                          color: Colors.grey[300],
+                                        ),
+                                        suffixIcon: Icon(
+                                          Icons.keyboard_arrow_right,
+                                          color: Colors.pink[400],
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(left:60),
+                                child: Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Text(
+                                    "How often do you do?",
+                                    style: TextStyle(fontSize:20, color:Colors.pink),
+                                  ),
+                                ),
+                              ),
+                              Text(
+                                "$_betaText",
+                                style: TextStyle(
+                                  fontSize:16,
+                                  color: Colors.blue,
+                                  fontStyle: FontStyle.italic,
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.symmetric(horizontal:8),
+                                child: Expanded(
+                                  child: Container(
+                                    height: 80,
+                                    padding: EdgeInsets.symmetric(horizontal:12),
+                                    child: TextField(
+                                      enabled: true,   // active or noAactive
+                                      /// [Constraint]
+                                      maxLines:1 ,
+                                      maxLength: 77,
+                                      maxLengthEnforced: false,
+                                      obscureText: false,  // notPassword
+                                      style: TextStyle(color: Colors.pink[900]),
+                                      ///  [onChanged]
+                                      onChanged: _handleBetaText,
+                                      controller: _textEditingControllerBeta,
+                                      /// [Decoration]
+                                      decoration: InputDecoration(
+                                        border: OutlineInputBorder(
+                                          borderRadius: BorderRadius.all(Radius.circular(4)),
+                                        ),
+                                        filled: true,
+                                        fillColor: Colors.white,
+                                        hintStyle: TextStyle(
+                                          color: Colors.black,
+                                        ),
+                                        hintText: "twice a week",
+                                        contentPadding: EdgeInsets.all(10),
+                                        icon: Icon(
+                                          Icons.check,
                                           color: Colors.pink[400],
                                         ),
                                         suffixIcon: Icon(
