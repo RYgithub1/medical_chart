@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:percent_indicator/percent_indicator.dart';
 import 'widget/bubble_border.dart';
 
 
@@ -112,6 +112,7 @@ class _NestedTabPageState extends State<NestedTabPage> {
                   height: 350,
                   child: TabBarView(  /// [Expanded]
                     children: [
+
                       Column(
                         children: <Widget>[
                           Text("ALPHA"),
@@ -232,7 +233,56 @@ class _NestedTabPageState extends State<NestedTabPage> {
                           ),
                         ],
                       ),
-                      Center(child: Text("BETA")),
+
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: <Widget>[
+                          Center(child: Text("BETA")),
+                          CircularPercentIndicator(
+                            radius: 99.0,
+                            lineWidth: 22.0,
+                            animation: true,
+                            percent: 66/100,   /// [count percentage]
+                            center: Text(
+                              "66%",
+                              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22.0),
+                            ),
+                            footer: Text(
+                              "Dayly Performance",
+                              style: TextStyle(
+                                fontSize: 22,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.blue,
+                              ),
+                            ),
+                            circularStrokeCap: CircularStrokeCap.round,
+                            backgroundColor: Colors.pink[200],
+                            progressColor: Colors.pink[600],
+                          ),
+                          CircularPercentIndicator(
+                            radius: 99.0,
+                            lineWidth: 22.0,
+                            animation: true,
+                            percent: 88/100,   /// [count percentage]
+                            center: Text(
+                              "88%",
+                              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22.0),
+                            ),
+                            footer: Text(
+                              "Monthly Performance",
+                              style: TextStyle(
+                                fontSize: 22,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.blue,
+                              ),
+                            ),
+                            circularStrokeCap: CircularStrokeCap.round,
+                            backgroundColor: Colors.pink[200],
+                            progressColor: Colors.pink[600],
+                          ),
+                        ],
+                      ),
+                      
                       Center(child: Text("GAMMA")),
                       Center(child: Text("DELTA")),
                     ],
