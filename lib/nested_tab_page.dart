@@ -283,7 +283,16 @@ class _NestedTabPageState extends State<NestedTabPage> {
                         ],
                       ),
                       
-                      Center(child: Text("GAMMA")),
+                      Column(
+                        children: [
+                          Center(child: Text("GAMMA")),
+                          Image.network(
+                            "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSHC9FvzxW65uVVDWtLV7qJ9-FI71iOfv4Lvg&usqp=CAU",
+                            color: Color.fromRGBO(255, 255, 255, 0.5),
+                            colorBlendMode: BlendMode.modulate
+                          ),
+                        ],
+                      ),
                       Center(child: Text("DELTA")),
                     ],
                   ),
