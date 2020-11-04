@@ -293,7 +293,104 @@ class _NestedTabPageState extends State<NestedTabPage> {
                           ),
                         ],
                       ),
-                      Center(child: Text("DELTA")),
+
+                      Column(
+                        children: <Widget>[
+                          Center(child: Text("DELTA")),
+                          Expanded(
+                            child: Stack(
+                              children: <Widget>[
+                                Align(
+                                  alignment: Alignment.topCenter,
+                                  child: Container(
+                                    width: 200,
+                                    height: 200,
+                                    decoration: BoxDecoration(
+                                      border: Border.all(
+                                        width: 1,
+                                        color: Colors.pink[200],
+                                      ),
+                                      borderRadius: BorderRadius.circular(40),
+                                    ),
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(40),
+                                      child: Image.asset(
+                                        "assets/images/baby_sleep.png",
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                Positioned(
+                                  top: 80,
+                                  left: 28,
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                    children: <Widget>[
+                                      Column(
+                                        children: <Widget>[
+                                          RawMaterialButton(
+                                            onPressed: () {},
+                                            elevation: 0,
+                                            fillColor: Colors.pink[300],
+                                            child: Icon(
+                                              Icons.arrow_left,
+                                              size: 20,
+                                              color: Colors.white,
+                                            ),
+                                            padding: EdgeInsets.all(15.0),
+                                            shape: CircleBorder(),
+                                          ),
+                                          SizedBox(height:8),
+                                          Text(
+                                            "Fun",
+                                            style: TextStyle(
+                                              color: Colors.black,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      SizedBox(width: 180),
+                                      Column(
+                                        children: <Widget>[
+                                          RawMaterialButton(
+                                            onPressed: () {},
+                                            elevation: 0,
+                                            fillColor: Colors.pink[300],
+                                            child: Icon(
+                                              Icons.arrow_right,
+                                              size: 20,
+                                              color: Colors.white,
+                                            ),
+                                            padding: EdgeInsets.all(15.0),
+                                            shape: CircleBorder(),
+                                          ),
+                                          SizedBox(height:8),
+                                          Text(
+                                            "Relax",
+                                            style: TextStyle(
+                                              color: Colors.black,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+                                        ],
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+
+
+
+
+
+
+
+                        ],
+                      ),
                     ],
                   ),
                 ),
@@ -372,3 +469,5 @@ class _NestedTabPageState extends State<NestedTabPage> {
   }
 
 }
+
+

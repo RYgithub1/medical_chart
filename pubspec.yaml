@@ -24,3 +24,5 @@ flutter:
   assets:
     - assets/images/sample_medical_doctors.jpg
     - assets/images/medical_alert.png
+    - assets/images/baby_sleep.png
+
