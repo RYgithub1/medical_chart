@@ -48,6 +48,11 @@ class _NestedTabPageState extends State<NestedTabPage> {
     print("input_content_beta: ${_textEditingControllerBeta.text}");
   }
 
+  /// [GAMMA]
+  double _sliderValue = 0.0;
+  void _changeSlider(double e) => setState(() { _sliderValue = e; });
+
+
 
   /// [========== build() ==========]
   @override
@@ -284,13 +289,30 @@ class _NestedTabPageState extends State<NestedTabPage> {
                       ),
                       
                       Column(
-                        children: [
+                        children: <Widget>[
                           Center(child: Text("GAMMA")),
                           Image.network(
                             "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSHC9FvzxW65uVVDWtLV7qJ9-FI71iOfv4Lvg&usqp=CAU",
                             color: Color.fromRGBO(255, 255, 255, 0.5),
                             colorBlendMode: BlendMode.modulate
                           ),
+                          Column(
+                            children: <Widget>[
+                              SizedBox(height:24),
+                              Center(child:Text("Calorimeter")),
+                              Center(child:Text("現在の値：${_sliderValue}")),
+                              Slider(
+                                label: '${_sliderValue}',
+                                min: 0,
+                                max: 7,
+                                value: _sliderValue,
+                                activeColor: Colors.pink[600],
+                                inactiveColor: Colors.pink[200],
+                                divisions: 7,
+                                onChanged: _changeSlider,
+                              )
+                            ],
+                          )
                         ],
                       ),
 
