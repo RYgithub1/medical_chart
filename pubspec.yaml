@@ -12,6 +12,7 @@ dependencies:
   cupertino_icons: ^1.0.0
   flutter_zoom_drawer: ^1.0.4
   percent_indicator: ^2.1.8
+  video_player: ^1.0.0
 
 
 dev_dependencies:

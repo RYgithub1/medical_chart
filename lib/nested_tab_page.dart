@@ -300,7 +300,7 @@ class _NestedTabPageState extends State<NestedTabPage> {
                             children: <Widget>[
                               SizedBox(height:24),
                               Center(child:Text("Calorimeter")),
-                              Center(child:Text("現在の値：${_sliderValue}")),
+                              Center(child:Text("Level：${_sliderValue}")),
                               Slider(
                                 label: '${_sliderValue}',
                                 min: 0,
