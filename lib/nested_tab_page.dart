@@ -351,17 +351,20 @@ class _NestedTabPageState extends State<NestedTabPage> {
                                     children: <Widget>[
                                       Column(
                                         children: <Widget>[
-                                          RawMaterialButton(
-                                            onPressed: () {},
-                                            elevation: 0,
-                                            fillColor: Colors.pink[300],
-                                            child: Icon(
-                                              Icons.arrow_left,
-                                              size: 20,
-                                              color: Colors.white,
+                                          Tooltip(
+                                            message: "Enjoy your life",
+                                            child: RawMaterialButton(
+                                              onPressed: () {},
+                                              elevation: 0,
+                                              fillColor: Colors.pink[300],
+                                              child: Icon(
+                                                Icons.arrow_left,
+                                                size: 20,
+                                                color: Colors.white,
+                                              ),
+                                              padding: EdgeInsets.all(15.0),
+                                              shape: CircleBorder(),
                                             ),
-                                            padding: EdgeInsets.all(15.0),
-                                            shape: CircleBorder(),
                                           ),
                                           SizedBox(height:8),
                                           Text(
@@ -376,17 +379,20 @@ class _NestedTabPageState extends State<NestedTabPage> {
                                       SizedBox(width: 180),
                                       Column(
                                         children: <Widget>[
-                                          RawMaterialButton(
-                                            onPressed: () {},
-                                            elevation: 0,
-                                            fillColor: Colors.pink[300],
-                                            child: Icon(
-                                              Icons.arrow_right,
-                                              size: 20,
-                                              color: Colors.white,
+                                          Tooltip(
+                                            message: "Nothing to think",
+                                            child: RawMaterialButton(
+                                              onPressed: () {},
+                                              elevation: 0,
+                                              fillColor: Colors.pink[300],
+                                              child: Icon(
+                                                Icons.arrow_right,
+                                                size: 20,
+                                                color: Colors.white,
+                                              ),
+                                              padding: EdgeInsets.all(15.0),
+                                              shape: CircleBorder(),
                                             ),
-                                            padding: EdgeInsets.all(15.0),
-                                            shape: CircleBorder(),
                                           ),
                                           SizedBox(height:8),
                                           Text(
