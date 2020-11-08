@@ -410,13 +410,6 @@ class _NestedTabPageState extends State<NestedTabPage> {
                               ],
                             ),
                           ),
-
-
-
-
-
-
-
                         ],
                       ),
                     ],
