@@ -30,7 +30,16 @@ class _MedicalAlertState extends State<MedicalAlert> {
         content: Column(
           children: <Widget>[
             Text('Are you OK?'),
-            Image.asset("assets/images/medical_alert.png"),
+            ColorFiltered(
+              colorFilter: ColorFilter.mode(
+                Colors.orange[200],
+                // BlendMode.modulate,
+                // BlendMode.darken,
+                // BlendMode.colorBurn,
+                BlendMode.difference
+              ),
+              child: Image.asset("assets/images/medical_alert.png"),
+            ),
           ]
         ),
         actions: <Widget>[
