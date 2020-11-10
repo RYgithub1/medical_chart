@@ -52,6 +52,12 @@ class _NestedTabPageState extends State<NestedTabPage> {
   double _sliderValue = 0.0;
   void _changeSlider(double e) => setState(() { _sliderValue = e; });
 
+  /// [toggleButton]
+  List<bool> _toggleButtonSelected = List.generate(
+    6,
+    (_) => false,
+  );
+
 
 
   /// [========== build() ==========]
@@ -233,6 +239,30 @@ class _NestedTabPageState extends State<NestedTabPage> {
                                     ),
                                   ),
                                 ),
+                              ),
+                              ToggleButtons(
+                                children: <Widget>[
+                                  Icon(Icons.format_bold),
+                                  Icon(Icons.format_italic),
+                                  Icon(Icons.format_underline),
+                                  Icon(Icons.format_align_left),
+                                  Icon(Icons.format_align_center),
+                                  Icon(Icons.format_align_right),
+                                ],
+                                isSelected: _toggleButtonSelected,
+                                onPressed: (int toggleButtonIndex){
+                                  setState(() {
+                                    _toggleButtonSelected[toggleButtonIndex] = !_toggleButtonSelected[toggleButtonIndex];
+                                  });
+                                },
+                                color: Colors.purple[300],
+                                fillColor: Colors.green[200],
+                                selectedColor: Colors.orange[200],
+                                borderWidth: 2,
+                                borderColor: Colors.pink,
+                                borderRadius: BorderRadius.circular(20),
+                                selectedBorderColor: Colors.deepPurple,
+                                
                               ),
                             ],
                           ),
