@@ -44,6 +44,21 @@ class FruitsPage extends StatelessWidget {
             ],
           ),
         ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: (){
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Row(
+                  children: <Widget>[
+                    new Icon(Icons.graphic_eq),
+                    SizedBox(width:12),
+                    Expanded(child: const Text('FRUITES POWER !!')),
+                  ],
+                ),
+              ),
+            );
+          }
+        ),
       ),
     );
   }
