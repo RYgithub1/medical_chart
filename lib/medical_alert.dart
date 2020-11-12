@@ -26,10 +26,23 @@ class _MedicalAlertState extends State<MedicalAlert> {
     var value = await showDialog(
       context: context,
       builder: (BuildContext context) => AlertDialog(
-        title: Text('Got Alert!'),
+        title: ShaderMask(
+          shaderCallback: (bounds) =>
+            RadialGradient(
+              tileMode: TileMode.mirror,
+              colors: [
+                Colors.amber,
+                Colors.purple,
+              ],
+            ).createShader(bounds),
+          child: const Text(
+            'Got Alert!',
+            style: TextStyle(color: Colors.white, fontSize:40),
+          ),
+        ),
         content: Column(
           children: <Widget>[
-            Text('Are you OK?'),
+            Text('Are you OK?', style: TextStyle(fontSize:32)),
             ColorFiltered(
               colorFilter: ColorFilter.mode(
                 Colors.orange[200],

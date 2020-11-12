@@ -124,7 +124,7 @@ class _NestedTabPageState extends State<NestedTabPage> {
                   child: TabBarView(  /// [Expanded]
                     children: [
 
-                      Column(
+                      Column(   /// [----- ALPHA -----]
                         children: <Widget>[
                           Text("ALPHA"),
                           SizedBox(height:20),
@@ -269,7 +269,7 @@ class _NestedTabPageState extends State<NestedTabPage> {
                         ],
                       ),
 
-                      Column(
+                      Column(   /// [----- BETA -----]
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: <Widget>[
                           Center(child: Text("BETA")),
@@ -318,7 +318,7 @@ class _NestedTabPageState extends State<NestedTabPage> {
                         ],
                       ),
                       
-                      Column(
+                      Column(   /// [----- GAMMA -----]
                         children: <Widget>[
                           Center(child: Text("GAMMA")),
                           Image.network(
@@ -346,7 +346,7 @@ class _NestedTabPageState extends State<NestedTabPage> {
                         ],
                       ),
 
-                      Column(
+                      Column(   /// [----- DELTA -----]
                         children: <Widget>[
                           Center(child: Text("DELTA")),
                           Expanded(
