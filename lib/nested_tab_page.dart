@@ -59,7 +59,7 @@ class _NestedTabPageState extends State<NestedTabPage> {
   );
 
 
-  bool _checked;
+  bool _checked = false;
 
 
 
@@ -382,60 +382,66 @@ class _NestedTabPageState extends State<NestedTabPage> {
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                                     children: <Widget>[
-                                      Column(
-                                        children: <Widget>[
-                                          Tooltip(
-                                            message: "Enjoy your life",
-                                            child: RawMaterialButton(
-                                              onPressed: () {},
-                                              elevation: 0,
-                                              fillColor: Colors.pink[300],
-                                              child: Icon(
-                                                Icons.arrow_left,
-                                                size: 20,
-                                                color: Colors.white,
+                                      IgnorePointer(
+                                        ignoring: true,
+                                        child: Column(
+                                          children: <Widget>[
+                                            Tooltip(
+                                              message: "Enjoy your life",
+                                              child: RawMaterialButton(
+                                                onPressed: () {},
+                                                elevation: 0,
+                                                fillColor: Colors.pink[300],
+                                                child: Icon(
+                                                  Icons.arrow_left,
+                                                  size: 20,
+                                                  color: Colors.white,
+                                                ),
+                                                padding: EdgeInsets.all(15.0),
+                                                shape: CircleBorder(),
                                               ),
-                                              padding: EdgeInsets.all(15.0),
-                                              shape: CircleBorder(),
                                             ),
-                                          ),
-                                          SizedBox(height:8),
-                                          Text(
-                                            "Fun",
-                                            style: TextStyle(
-                                              color: Colors.black,
-                                              fontWeight: FontWeight.bold,
+                                            SizedBox(height:8),
+                                            Text(
+                                              "Fun",
+                                              style: TextStyle(
+                                                color: Colors.black,
+                                                fontWeight: FontWeight.bold,
+                                              ),
                                             ),
-                                          ),
-                                        ],
+                                          ],
+                                        ),
                                       ),
                                       SizedBox(width: 180),
-                                      Column(
-                                        children: <Widget>[
-                                          Tooltip(
-                                            message: "Nothing to think",
-                                            child: RawMaterialButton(
-                                              onPressed: () {},
-                                              elevation: 0,
-                                              fillColor: Colors.pink[300],
-                                              child: Icon(
-                                                Icons.arrow_right,
-                                                size: 20,
-                                                color: Colors.white,
+                                      IgnorePointer(
+                                        ignoring: true,
+                                        child: Column(
+                                          children: <Widget>[
+                                            Tooltip(
+                                              message: "Nothing to think",
+                                              child: RawMaterialButton(
+                                                onPressed: () {},
+                                                elevation: 0,
+                                                fillColor: Colors.pink[300],
+                                                child: Icon(
+                                                  Icons.arrow_right,
+                                                  size: 20,
+                                                  color: Colors.white,
+                                                ),
+                                                padding: EdgeInsets.all(15.0),
+                                                shape: CircleBorder(),
                                               ),
-                                              padding: EdgeInsets.all(15.0),
-                                              shape: CircleBorder(),
                                             ),
-                                          ),
-                                          SizedBox(height:8),
-                                          Text(
-                                            "Relax",
-                                            style: TextStyle(
-                                              color: Colors.black,
-                                              fontWeight: FontWeight.bold,
+                                            SizedBox(height:8),
+                                            Text(
+                                              "Relax",
+                                              style: TextStyle(
+                                                color: Colors.black,
+                                                fontWeight: FontWeight.bold,
+                                              ),
                                             ),
-                                          ),
-                                        ],
+                                          ],
+                                        ),
                                       )
                                     ],
                                   ),
