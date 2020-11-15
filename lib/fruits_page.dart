@@ -41,6 +41,10 @@ class FruitsPage extends StatelessWidget {
               ListTile(title: Text("Cherry")),
               ListTile(title: Text("Watermelon")),
               ListTile(title: Text("Lemon")),
+              InteractiveViewer(
+                constrained: false,
+                child: Image.asset("https://www.cebuflorist.com/images/products/large_185_FreshFruitBasket-13.jpg"),
+              ),
             ],
           ),
         ),
