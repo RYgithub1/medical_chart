@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'fruits_heaven_page.dart';
+
 
 
 class FruitsPage extends StatelessWidget {
@@ -8,9 +10,21 @@ class FruitsPage extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: Text("お見舞いFruits"),
+          title: Text("Get-well Fruits"),
           centerTitle: true,
           backgroundColor: Colors.pink[200],
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(Icons.more, color: Colors.white),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => FruitsHeavenPage()),
+                );
+              },
+            ),
+            IconButton(icon: Icon(Icons.more_horiz, color: Colors.white)),
+          ],
         ),
         body: ColorFiltered(
           colorFilter: ColorFilter.mode(
@@ -41,10 +55,6 @@ class FruitsPage extends StatelessWidget {
               ListTile(title: Text("Cherry")),
               ListTile(title: Text("Watermelon")),
               ListTile(title: Text("Lemon")),
-              InteractiveViewer(
-                constrained: false,
-                child: Image.asset("https://www.cebuflorist.com/images/products/large_185_FreshFruitBasket-13.jpg"),
-              ),
             ],
           ),
         ),
@@ -55,8 +65,8 @@ class FruitsPage extends StatelessWidget {
                 content: Row(
                   children: <Widget>[
                     new Icon(Icons.graphic_eq),
-                    SizedBox(width:12),
-                    Expanded(child: const Text('FRUITES POWER !!')),
+                    const SizedBox(width:12),
+                    const Text('FRUITES POWER !!'),
                   ],
                 ),
               ),
