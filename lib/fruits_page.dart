@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'fruits_fader.dart';
 import 'fruits_heaven_page.dart';
 
 
@@ -23,7 +24,15 @@ class FruitsPage extends StatelessWidget {
                 );
               },
             ),
-            IconButton(icon: Icon(Icons.more_horiz, color: Colors.white)),
+            IconButton(
+              icon: Icon(Icons.more_horiz, color: Colors.white),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => FruitsFader()),
+                );
+              },
+            ),
           ],
         ),
         body: ColorFiltered(
