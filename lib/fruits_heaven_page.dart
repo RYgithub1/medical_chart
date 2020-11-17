@@ -19,6 +19,9 @@ class _FruitsHeavenPageState extends State<FruitsHeavenPage> {
           centerTitle: true,
           backgroundColor: Colors.pink[300],
         ),
+        endDrawer: Drawer(
+          child: Container(),
+        ),
         body: InteractiveViewer(
           minScale: 0.4,
           maxScale: 3.2,
