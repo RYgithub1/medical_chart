@@ -13,6 +13,7 @@ dependencies:
   flutter_zoom_drawer: ^1.0.4
   percent_indicator: ^2.1.8
   video_player: ^1.0.0
+  flutter_launcher_icons: ^0.8.1
 
 
 dev_dependencies:
@@ -27,3 +28,10 @@ flutter:
     - assets/images/medical_alert.png
     - assets/images/baby_sleep.png
 
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/icons/medical_chart_icon.jpg"
+  adaptive_icon_background: "#f33c35"
+  adaptive_icon_foreground: "assets/icons/medical_chart_icon.jpg"
