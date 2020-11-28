@@ -32,6 +32,7 @@ flutter:
     - assets/images/sample_medical_doctors.jpg
     - assets/images/medical_alert.png
     - assets/images/baby_sleep.png
+    - assets/images/alert.svg
 
 
 flutter_icons:

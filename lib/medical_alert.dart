@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'fruits_page.dart';
 
 
@@ -190,6 +191,12 @@ class _MedicalAlertState extends State<MedicalAlert> {
               RaisedButton(
                 onPressed: _showDialog,
                 child: Text("Open Dialog"),
+              ),
+              SvgPicture.asset(
+                'assets/images/alert.svg',
+                semanticsLabel: 'ALERT',
+                width: 40,
+                height: 50,
               ),
 
               SizedBox(height:44),
