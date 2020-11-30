@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:intl/intl.dart';
 import 'package:uuid/uuid.dart';
 
 
@@ -24,6 +25,7 @@ class _FruitsHeavenPageState extends State<FruitsHeavenPage>{
   /// [--- build() ---]
   @override
   Widget build(BuildContext context) {
+    /// [=== uuid作成 ===]
     /// [v1 (time-based) -> '6c84fb90-12c4-11e1-840d-7b25c5ee775a']
     uuidV1 = uuid.v1();
     print("uuidV1:"+uuidV1);
@@ -43,6 +45,23 @@ class _FruitsHeavenPageState extends State<FruitsHeavenPage>{
     uuidV5 = uuid.v5(Uuid.NAMESPACE_URL, 'www.google.com');
     print("uuidV5:"+uuidV5);
 
+    /// [=== NumberFormat ===]
+    final formatterThreeDigitsDecimalZero = new NumberFormat("###");
+          print(formatterThreeDigitsDecimalZero.format(123456789));
+    final formatterThreeDigits = new NumberFormat("###.0#");
+          print(formatterThreeDigits.format(123456789));
+    final formatterThreeDigitsDecimal1 = NumberFormat("#,###.0");
+    var value1 = (123456789 / 10000);
+          print(formatterThreeDigitsDecimal1.format(value1)+"百万円");
+    final formatterThreeDigitsDecimal2 = NumberFormat("#,###.0#");
+    var value2 = (123456789 / 10000);
+          print(formatterThreeDigitsDecimal2.format(value2)+"百万円");
+    Function mathFunc = (Match match) => '${match[1]},';
+          RegExp reg = RegExp(r'(\d{1,3})(?=(\d{3})+(?!\d))');
+          String result = '123456789円'.replaceAllMapped(reg, mathFunc);
+          print('$result');
+
+
     return SafeArea(
       child: Scaffold(
         resizeToAvoidBottomPadding: false,
@@ -56,7 +75,7 @@ class _FruitsHeavenPageState extends State<FruitsHeavenPage>{
           backgroundColor: Colors.pink[300],
         ),
         endDrawer: Drawer(
-          child: Container(),
+          child: Container()
         ),
         body: Column(
           children: <Widget>[
