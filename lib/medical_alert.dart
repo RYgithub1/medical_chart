@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:medical_chart/chnage_form_page.dart';
 import 'fruits_page.dart';
 
 
@@ -169,7 +170,12 @@ class _MedicalAlertState extends State<MedicalAlert> {
               ListTile(
                 leading: Icon(Icons.settings),
                 title: Text("Settings"),
-                onTap: (){print("Settings");},
+                onTap: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => ChnageFormPage()),
+                  );
+                },
               ),
               ListTile(
                 leading: Icon(Icons.logout),
