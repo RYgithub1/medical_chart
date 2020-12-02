@@ -29,8 +29,16 @@ class _ChnageFormPageState extends State<ChnageFormPage> {
     });
   }
 
-  var _flagSwitchList = true;
-  void _handleCheckboxSwitchList(bool flagValueSwitchList) {
+
+  bool _flagSwitch = false;
+  void _handleSwitch(bool flagValueSwitch) {
+    setState(() {
+      _flagSwitch = flagValueSwitch;
+    });
+  }
+
+  bool _flagSwitchList = false;
+  void _handleSwitchListTile(bool flagValueSwitchList) {
     setState(() {
       _flagSwitchList = flagValueSwitchList;
     });
@@ -53,88 +61,117 @@ class _ChnageFormPageState extends State<ChnageFormPage> {
           backgroundColor: Colors.pink[200],
         ),
 
-        body: new Container(
-          padding: const EdgeInsets.all(12),
-          margin: const EdgeInsets.all(12),
-          child: new Column(
-            children: <Widget>[
-              new Text("Checkbox"),
-              new Center(
-                child: new Icon(
-                  Icons.thumb_up,
-                  color: _flag
-                    ? Colors.orange[700]
-                    : Colors.grey[300],
-                  size: 60,
-                ),
-              ),
-              new Checkbox(
-                activeColor: Colors.pink,
-                value: _flag,
-                onChanged: _handleCheckbox,
-              ),
-
-              new Divider(thickness:2 , height: 2, color: Colors.pink[900]), /// [--------]
-              new SizedBox(height: 20),
-              new Text("CheckboxListTile"),
-              new CheckboxListTile(
-                activeColor: Colors.green,
-                title: new Text('SELF CHECK ITEM'),
-                subtitle: new Text('ask nurce if any'),
-                secondary: new Icon(
-                  Icons.thumb_up,
-                  color: _flagListTile
-                    ? Colors.orange[700]
-                    : Colors.grey[300],
-                ),
-                controlAffinity: ListTileControlAffinity.leading,
-                value: _flagListTile,
-                onChanged: _handleCheckboxListTile,
-              ),
-
-              new Divider(thickness:2 , height: 2, color: Colors.pink[900]), /// [--------]
-              new SizedBox(height: 20),
-              new Text("CheckboxButton"),
-              new RaisedButton(
-                child: Text(
-                  "         Agree         ",
-                  style: TextStyle(fontSize: 16),
-                ),
-                onPressed: !_flagButton
-                  ? null
-                  : () {print("Agree to app policy");},
-                color: _flagButton
-                  ? Colors.orange[700]
-                  : Colors.white,
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-              ),
-              new Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+        body: new SingleChildScrollView(
+          child: new SafeArea(
+            child: new Container(
+              padding: const EdgeInsets.all(12),
+              margin: const EdgeInsets.all(12),
+              child: new Column(
                 children: <Widget>[
-                  Checkbox(
-                    activeColor: Colors.purple,
-                    value: _flagButton,
-                    onChanged: _handleCheckboxButton,
+                  new Text("Checkbox"),
+                  new Center(
+                    child: new Icon(
+                      Icons.thumb_up,
+                      color: _flag
+                        ? Colors.orange[700]
+                        : Colors.grey[300],
+                      size: 40,
+                    ),
                   ),
-                  Text("Read app policy"),
+                  new Checkbox(
+                    activeColor: Colors.pink,
+                    value: _flag,
+                    onChanged: _handleCheckbox,
+                  ),
+
+                  new Divider(thickness:2 , height: 2, color: Colors.pink[900]), /// [--------]
+                  new SizedBox(height: 20),
+                  new Text("CheckboxListTile"),
+                  new CheckboxListTile(
+                    activeColor: Colors.green,
+                    title: new Text('SELF CHECK ITEM'),
+                    subtitle: new Text('ask nurce if any'),
+                    secondary: new Icon(
+                      Icons.thumb_up,
+                      color: _flagListTile
+                        ? Colors.orange[700]
+                        : Colors.grey[300],
+                    ),
+                    controlAffinity: ListTileControlAffinity.leading,
+                    value: _flagListTile,
+                    onChanged: _handleCheckboxListTile,
+                  ),
+
+                  new Divider(thickness:2 , height: 2, color: Colors.pink[900]), /// [--------]
+                  new SizedBox(height: 20),
+                  new Text("CheckboxButton"),
+                  new RaisedButton(
+                    child: Text(
+                      "         Agree         ",
+                      style: TextStyle(fontSize: 16),
+                    ),
+                    onPressed: !_flagButton
+                      ? null
+                      : () {print("Agree to app policy");},
+                    color: _flagButton
+                      ? Colors.orange[700]
+                      : Colors.white,
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+                  ),
+                  new Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Checkbox(
+                        activeColor: Colors.purple,
+                        value: _flagButton,
+                        onChanged: _handleCheckboxButton,
+                      ),
+                      Text("Read app policy"),
+                    ],
+                  ),
+
+                  new Divider(thickness:2 , height: 2, color: Colors.pink[900]), /// [--------]
+                  new SizedBox(height: 20),
+                  new Text("Switch"),
+                  new Center(
+                    child: new Icon(
+                      Icons.thumb_up,
+                      color: _flagSwitch
+                        ? Colors.orange[700]
+                        : Colors.grey[300],
+                      size: 40,
+                    ),
+                  ),
+                  new Switch(
+                    activeColor: Colors.yellow,
+                    value: _flagSwitch,
+                    onChanged: _handleSwitch,
+                  ),
+
+                  new Divider(thickness:2 , height: 2, color: Colors.pink[900]), /// [--------]
+                  new SizedBox(height: 20),
+                  new Text("SwitchListTile"),
+                  new SwitchListTile(
+                    activeColor: Colors.blue,
+                    title: new Text(
+                      "Switch your mind",
+                      style: new TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    subtitle: new Text("Don't be fat"),
+                    secondary: new Icon(
+                      Icons.thumb_up,
+                      color: _flagSwitchList
+                        ? Colors.orange[700]
+                        : Colors.grey[300],
+                    ),
+                    controlAffinity: ListTileControlAffinity.leading,
+                    value: _flagSwitchList,
+                    onChanged: _handleSwitchListTile,
+                  ),
                 ],
-              ),
-
-              new Divider(thickness:2 , height: 2, color: Colors.pink[900]), /// [--------]
-              new SizedBox(height: 20),
-              new Text("SwitchListTile"),
-              new SwitchListTile(
-                activeColor: Colors.orange[700],
-                value: _flagSwitchList,
-                title: new Text(
-                  "Switch List",
-                  style: new TextStyle(fontWeight: FontWeight.bold),
-                ),
-                onChanged: _handleCheckboxSwitchList,
               )
-
-            ],
-          )
+            ),
+          ),
         ),
       ),
     );
