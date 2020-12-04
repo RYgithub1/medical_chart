@@ -21,6 +21,8 @@ dependencies:
   flutter_screenutil: ^3.2.0
   intl: ^0.16.1
   cached_network_image: ^2.4.1
+  webview_flutter: ^1.0.7
+  url_launcher: ^5.7.10
 
 
 dev_dependencies:
