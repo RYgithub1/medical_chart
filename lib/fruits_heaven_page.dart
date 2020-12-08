@@ -80,7 +80,12 @@ class _FruitsHeavenPageState extends State<FruitsHeavenPage>{
         ),
         body: Column(
           children: <Widget>[
-            SizedBox(height:40),
+            Flexible(
+              child: FractionallySizedBox(
+                heightFactor: 0.22,
+                child: SizedBox(height:40),
+              ),
+            ),
             // InteractiveViewer(
             //   minScale: 0.4,
             //   maxScale: 3.2,
@@ -88,10 +93,16 @@ class _FruitsHeavenPageState extends State<FruitsHeavenPage>{
             //   child: Image.network("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRoP5IzALZ8GLCt0w0-Rqj7AnRt_8U4-oGAXA&usqp=CAU"),
             // ),
             // Image.network("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRoP5IzALZ8GLCt0w0-Rqj7AnRt_8U4-oGAXA&usqp=CAU"),
-            CachedNetworkImage(
-                imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRoP5IzALZ8GLCt0w0-Rqj7AnRt_8U4-oGAXA&usqp=CAU",
-                placeholder: (context, url) => CircularProgressIndicator(),  /// [考え中のくるくる]
-                errorWidget: (context, url, error) => Icon(Icons.error),  /// [エラーアイコン]
+            Container(
+              alignment: Alignment.topCenter,
+              child: FractionallySizedBox(
+                widthFactor: 0.88,
+                child: CachedNetworkImage(
+                    imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRoP5IzALZ8GLCt0w0-Rqj7AnRt_8U4-oGAXA&usqp=CAU",
+                    placeholder: (context, url) => CircularProgressIndicator(),  /// [考え中のくるくる]
+                    errorWidget: (context, url, error) => Icon(Icons.error),  /// [エラーアイコン]
+                ),
+              ),
             ),
             SizedBox(height:40),
             Text("Any Order with SNS Auth",  style:TextStyle(fontWeight:FontWeight.bold, fontSize:32)),
