@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';
+import 'package:package_info/package_info.dart';
 import 'package:uuid/uuid.dart';
 
 
@@ -21,6 +22,27 @@ class _FruitsHeavenPageState extends State<FruitsHeavenPage>{
   var uuidV12;
   var uuidV4;
   var uuidV5;
+
+  PackageInfo _packageInfo = PackageInfo(
+    appName: 'Unknown',
+    packageName: 'Unknown',
+    version: 'Unknown',
+    buildNumber: 'Unknown',
+  );
+
+  /// [get pachage property]
+  Future<void> _initPackageInfo() async {
+    PackageInfo packageInfo = await PackageInfo.fromPlatform();
+    // String appName = packageInfo.appName;
+    // String packageName = packageInfo.packageName;
+    // String version = packageInfo.version;
+    // String buildNumber = packageInfo.buildNumber;
+    setState(() {
+      _packageInfo = packageInfo;
+    });
+  }
+
+
 
 
   /// [--- build() ---]
@@ -127,6 +149,15 @@ class _FruitsHeavenPageState extends State<FruitsHeavenPage>{
                   icon: FaIcon(FontAwesomeIcons.amazon, color:Colors.orange),
                   onPressed: (){print("SNS/Amazon");},
                 ),
+              ],
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                _infoTile('App name', _packageInfo.appName),
+                _infoTile('Package name', _packageInfo.packageName),
+                _infoTile('App version', _packageInfo.version),
+                _infoTile('Build number', _packageInfo.buildNumber),
               ],
             ),
           ],
