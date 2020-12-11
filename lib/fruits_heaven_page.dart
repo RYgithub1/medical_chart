@@ -16,33 +16,32 @@ class FruitsHeavenPage extends StatefulWidget {
 
 
 class _FruitsHeavenPageState extends State<FruitsHeavenPage>{
-
-  var uuid = Uuid();  // define uuid f
+  /// [define uuid f]
+  var uuid = Uuid();
   var uuidV1;
   var uuidV12;
   var uuidV4;
   var uuidV5;
 
+
+  /// [get pachage property]
   PackageInfo _packageInfo = PackageInfo(
     appName: 'Unknown',
     packageName: 'Unknown',
     version: 'Unknown',
     buildNumber: 'Unknown',
   );
-
-  /// [get pachage property]
+  @override
+  void initState() {
+    super.initState();
+    _initPackageInfo();
+  }
   Future<void> _initPackageInfo() async {
-    PackageInfo packageInfo = await PackageInfo.fromPlatform();
-    // String appName = packageInfo.appName;
-    // String packageName = packageInfo.packageName;
-    // String version = packageInfo.version;
-    // String buildNumber = packageInfo.buildNumber;
+    final PackageInfo info = await PackageInfo.fromPlatform();
     setState(() {
-      _packageInfo = packageInfo;
+      _packageInfo = info;
     });
   }
-
-
 
 
   /// [--- build() ---]
@@ -154,10 +153,10 @@ class _FruitsHeavenPageState extends State<FruitsHeavenPage>{
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                _infoTile('App name', _packageInfo.appName),
-                _infoTile('Package name', _packageInfo.packageName),
-                _infoTile('App version', _packageInfo.version),
-                _infoTile('Build number', _packageInfo.buildNumber),
+                new ListTile(title: new Text("App Name: "+ _packageInfo.appName)),
+                new ListTile(title: new Text("Package name: "+ _packageInfo.packageName)),
+                new ListTile(title: new Text("App version: "+ _packageInfo.version)),
+                new ListTile(title: new Text("Build number: "+ _packageInfo.buildNumber)),
               ],
             ),
           ],
