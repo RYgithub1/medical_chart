@@ -143,9 +143,20 @@ class _NestedTabPageState extends State<NestedTabPage> {
                                 padding: EdgeInsets.only(left:60),
                                 child: Align(
                                   alignment: Alignment.centerLeft,
-                                  child: Text(
+                                  child: SelectableText(
                                     "What kind of exercise do you do?",
                                     style: TextStyle(fontSize:20, color:Colors.pink),
+                                    showCursor: true,
+                                    cursorWidth: 5,
+                                    cursorColor: Colors.green,
+                                    cursorRadius: Radius.circular(5),
+                                    toolbarOptions: ToolbarOptions(
+                                      cut: true,
+                                      copy: true,
+                                      paste: true,
+                                      selectAll: true,
+                                    ),
+                                    onTap: () => print("Text tapped!"),
                                   ),
                                 ),
                               ),
@@ -198,9 +209,18 @@ class _NestedTabPageState extends State<NestedTabPage> {
                                 padding: EdgeInsets.only(left:60),
                                 child: Align(
                                   alignment: Alignment.centerLeft,
-                                  child: Text(
+                                  child: SelectableText(
                                     "How often do you do?",
                                     style: TextStyle(fontSize:20, color:Colors.pink),
+                                    showCursor: true,
+                                    cursorWidth: 12,
+                                    cursorColor: Colors.purple,
+                                    cursorRadius: Radius.circular(12),
+                                    toolbarOptions: ToolbarOptions(
+                                      copy: true,
+                                      selectAll: true,
+                                    ),
+                                    onTap: () => print("Bottom text tapped..."),
                                   ),
                                 ),
                               ),
