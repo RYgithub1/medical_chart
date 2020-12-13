@@ -475,18 +475,23 @@ class _NestedTabPageState extends State<NestedTabPage> {
                               ],
                             ),
                           ),
-                          CheckboxListTile(
-                            title: Text("Go 100 years old"),
-                            secondary: Icon(Icons.money),
-                            controlAffinity: ListTileControlAffinity.leading,
-                            value: _checked,
-                            onChanged: (bool boolValue){
-                              setState((){
-                                _checked: boolValue;
-                              });
-                            },
-                            activeColor: Colors.orange[300],
-                            checkColor: Colors.pink[700],
+                          AbsorbPointer(   /// [instead of conditional "onTap: null"]
+                            absorbing: false,
+                            // absorbing: true,
+                            ignoringSemantics: false,
+                            child: CheckboxListTile(
+                              title: Text("Go 100 years old"),
+                              secondary: Icon(Icons.money),
+                              controlAffinity: ListTileControlAffinity.leading,
+                              value: _checked,
+                              onChanged: (bool boolValue){
+                                setState((){
+                                  _checked: boolValue;
+                                });
+                              },
+                              activeColor: Colors.orange[300],
+                              checkColor: Colors.pink[700],
+                            ),
                           )
                         ],
                       ),
