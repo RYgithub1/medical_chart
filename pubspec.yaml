@@ -41,6 +41,7 @@ flutter:
     - assets/images/medical_alert.png
     - assets/images/baby_sleep.png
     - assets/images/alert.svg
+    - assets/images/waiting_image.png
 
 
 flutter_icons:

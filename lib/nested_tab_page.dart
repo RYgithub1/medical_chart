@@ -350,10 +350,17 @@ class _NestedTabPageState extends State<NestedTabPage> {
                       Column(   /// [----- GAMMA -----]
                         children: <Widget>[
                           Center(child: Text("GAMMA")),
-                          Image.network(
-                            "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSHC9FvzxW65uVVDWtLV7qJ9-FI71iOfv4Lvg&usqp=CAU",
-                            color: Color.fromRGBO(255, 255, 255, 0.5),
-                            colorBlendMode: BlendMode.modulate
+                          // Image.network(
+                          //   "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSHC9FvzxW65uVVDWtLV7qJ9-FI71iOfv4Lvg&usqp=CAU",
+                          //   color: Color.fromRGBO(255, 255, 255, 0.5),
+                          //   colorBlendMode: BlendMode.modulate
+                          // ),
+                          // assets/images/waiting_image.svg
+                          new FadeInImage.assetNetwork(
+                            placeholder: "assets/images/waiting_image.png",
+                            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSHC9FvzxW65uVVDWtLV7qJ9-FI71iOfv4Lvg&usqp=CAU",
+                            fadeInDuration: const Duration(seconds: 1),
+                            fadeInCurve: Curves.bounceInOut,
                           ),
                           Column(
                             children: <Widget>[
